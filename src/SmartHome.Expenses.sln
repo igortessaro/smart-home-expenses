@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-application", "01-application", "{3BBCB918-0EDA-4471-8633-F6CA225529DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHome.Expenses.Api", "SmartHome.Expenses.Api\SmartHome.Expenses.Api.csproj", "{D317F05A-8DB9-48DD-9649-6656A1BAE705}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-domain", "02-domain", "{2973C8BD-9FE0-4E18-849E-A13C73E21E3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHome.Expenses.Domain", "SmartHome.Expenses.Domain\SmartHome.Expenses.Domain.csproj", "{98129540-651C-4EDB-A9D4-5C454461B35C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-infrastructure", "03-infrastructure", "{BA772744-46CF-465F-B6FA-008FE7066031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHome.Expenses.Infrastructure", "SmartHome.Expenses.Infrastructure\SmartHome.Expenses.Infrastructure.csproj", "{D7F2279B-FF8F-497D-AB92-D0C380B4071E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHome.Expenses.Infrastructure.CrossCutting", "SmartHome.Expenses.Infrastructure.CrossCutting\SmartHome.Expenses.Infrastructure.CrossCutting.csproj", "{18D97B8A-E470-456C-8C6F-032118121B91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D317F05A-8DB9-48DD-9649-6656A1BAE705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D317F05A-8DB9-48DD-9649-6656A1BAE705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D317F05A-8DB9-48DD-9649-6656A1BAE705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D317F05A-8DB9-48DD-9649-6656A1BAE705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98129540-651C-4EDB-A9D4-5C454461B35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98129540-651C-4EDB-A9D4-5C454461B35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98129540-651C-4EDB-A9D4-5C454461B35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98129540-651C-4EDB-A9D4-5C454461B35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7F2279B-FF8F-497D-AB92-D0C380B4071E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F2279B-FF8F-497D-AB92-D0C380B4071E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F2279B-FF8F-497D-AB92-D0C380B4071E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F2279B-FF8F-497D-AB92-D0C380B4071E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D97B8A-E470-456C-8C6F-032118121B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D97B8A-E470-456C-8C6F-032118121B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D97B8A-E470-456C-8C6F-032118121B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D97B8A-E470-456C-8C6F-032118121B91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D317F05A-8DB9-48DD-9649-6656A1BAE705} = {3BBCB918-0EDA-4471-8633-F6CA225529DA}
+		{98129540-651C-4EDB-A9D4-5C454461B35C} = {2973C8BD-9FE0-4E18-849E-A13C73E21E3A}
+		{D7F2279B-FF8F-497D-AB92-D0C380B4071E} = {BA772744-46CF-465F-B6FA-008FE7066031}
+		{18D97B8A-E470-456C-8C6F-032118121B91} = {BA772744-46CF-465F-B6FA-008FE7066031}
+	EndGlobalSection
+EndGlobal
