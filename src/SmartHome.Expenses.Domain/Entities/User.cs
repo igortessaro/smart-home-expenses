@@ -2,8 +2,9 @@ namespace SmartHome.Expenses.Domain.Entities;
 
 public sealed class User
 {
-    protected User()
+    internal User()
     {
+        Expenses = new List<Expense>();
     }
     
     public Guid Id { get; private set; }

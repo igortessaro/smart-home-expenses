@@ -8,6 +8,8 @@ public static class AutoMapperServiceColletionExtensions
     public static IServiceCollection AddInfrastructureAutoMapper(this IServiceCollection services)
     {
         _ = services.AddAutoMapper(x => x.AddProfile<UserProfile>());
+        _ = services.AddAutoMapper(x => x.AddProfile<CategoryProfile>());
+        _ = services.AddAutoMapper(x => x.AddProfile<ExpenseProfile>());
 
         return services;
     }

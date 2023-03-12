@@ -12,11 +12,12 @@ public sealed class UserRepository : BaseRepository<User>, IUserRepository
     public UserRepository(SmartHomeContext context, IMapper mapper) : base(context, mapper)
     {
     }
-
+    
     public async Task<IReadOnlyCollection<UserSummaryDto>> GetAllAsync()
     {
-        var result = await this.Query<UserSummaryDto>().ToListAsync();
+        var result = await this.GetAllAsync<UserSummaryDto>();
 
-        return new ReadOnlyCollection<UserSummaryDto>(result);
+        return result;
     }
+    
 }

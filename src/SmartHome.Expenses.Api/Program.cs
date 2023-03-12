@@ -16,6 +16,7 @@ _ = builder.Services.AddCors(options =>
 _ = builder.Services.AddMysqlDbContext(builder.Configuration);
 _ = builder.Services.AddInfrastructureAutoMapper();
 _ = builder.Services.AddRelationalRepository();
+_ = builder.Services.AddDomainService();
 
 var app = builder.Build();
 

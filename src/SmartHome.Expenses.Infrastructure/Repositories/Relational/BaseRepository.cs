@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -20,16 +21,30 @@ public abstract class BaseRepository<TEntity> : IDisposable, IBaseRepository<TEn
         this._mapper = mapper;
     }
 
-    public IQueryable<TEntity> Query(int take = 100) => this._dbSet.AsNoTracking();
+    public async Task<IReadOnlyCollection<TSummary>> GetAllAsync<TSummary>() where TSummary : class
+    {
+        var result = await this.Query<TSummary>().ToListAsync();
 
-    public IQueryable<TProjection> Query<TProjection>(Expression<Func<TEntity, bool>> predicate) where TProjection : class
+        return new ReadOnlyCollection<TSummary>(result);
+    }
+    
+    public async Task<int> InsertAsync(TEntity entity)
+    {
+        await this._dbSet.AddAsync(entity);
+        return await this._context.SaveChangesAsync();
+    }
+
+    private IQueryable<TEntity> Query() => this._dbSet.AsNoTracking();
+
+    protected IQueryable<TProjection> Query<TProjection>(Expression<Func<TEntity, bool>> predicate)
+        where TProjection : class
     {
         return this.Query()
             .Where(predicate)
             .ProjectTo<TProjection>(this._mapper.ConfigurationProvider);
     }
 
-    public IQueryable<TProjection> Query<TProjection>() where TProjection : class
+    private IQueryable<TProjection> Query<TProjection>() where TProjection : class
     {
         return this.Query()
             .ProjectTo<TProjection>(this._mapper.ConfigurationProvider);
@@ -50,7 +65,7 @@ public abstract class BaseRepository<TEntity> : IDisposable, IBaseRepository<TEn
 
         if (disposing)
         {
-            this._context?.Dispose();
+            this._context.Dispose();
         }
 
         this._disposed = true;

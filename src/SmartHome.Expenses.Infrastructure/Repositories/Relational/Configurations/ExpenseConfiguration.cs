@@ -12,7 +12,7 @@ public sealed class ExpenseConfiguration: IEntityTypeConfiguration<Expense>
         
         builder.HasKey(e => e.Id);
         
-        builder.Property(e => e.Id).HasColumnName("id");
+        builder.Property(e => e.Id).HasColumnName("id").ValueGeneratedOnAdd();
         builder.Property(e => e.Name).HasColumnName("name");
         builder.Property(e => e.Description).HasColumnName("description");
         builder.Property(e => e.Amount).HasColumnName("amount");
